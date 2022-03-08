@@ -9,6 +9,7 @@ import { FormControlLabel, TextField } from '@material-ui/core';
 import { makeStyles, ThemeProvider, createTheme } from '@material-ui/core/styles'
 import { blue, green, orange } from '@material-ui/core/colors';
 import MyContainer from './component/MyContainer';
+import YoutubeForm from './component/forms-formik-yup/YoutubeForm';
 
 const useStyles = makeStyles({
   root: {
@@ -45,12 +46,16 @@ const theme = createTheme({
 function App() {
   return (
         <div className="App">
-        <header className="App-header">
+          <YoutubeForm />
+
+
+
+        {/* <header className="App-header"> */}
           {/* <ButtonStyled /> */}
           {/* <TextField />
           <CheckboxExample /> */}
-          <MyContainer />
-          {/* <ButtonGroup>
+          { /* <MyContainer />
+          <ButtonGroup>
             <Button 
             startIcon={<SaveIcon />} variant="contained" color="primary"
             size='large'style={{fontSize: 18, backgroundColor: 'blue'}}
@@ -61,8 +66,8 @@ function App() {
             size='large'style={{fontSize: 18}}
             onClick={() => alert('I am Saurabh')}>Discard</Button>
           </ButtonGroup> */}
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
+        {/* <img src={logo} className="App-logo" alt="logo" />
+      </header> */}
     </div>      
   );
 }
