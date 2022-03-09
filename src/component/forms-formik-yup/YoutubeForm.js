@@ -41,22 +41,25 @@ function YoutubeForm() {
                             <div className='form-control'>
                                 <input type='text' id='name' name='name' 
                                 onChange={formik.handleChange} 
-                                value={formik.values.name}/>
-                                {formik.errors.name ? <div className='error'>{formik.errors.name}</div> : null}
+                                value={formik.values.name}
+                                onBlur={formik.handleBlur} />
+                                {formik.touched.name && formik.errors.name ? <div className='error'>{formik.errors.name}</div> : null}
                             </div>
 
                             <div className='form-control'>
                                 <input type='text' id='email' name='email'
                                 onChange={formik.handleChange} 
-                                value={formik.values.email} />
-                                {formik.errors.email ? <div className='error'>{formik.errors.email}</div> : null}
+                                value={formik.values.email} 
+                                onBlur={formik.handleBlur} />
+                                {formik.touched.email && formik.errors.email ? <div className='error'>{formik.errors.email}</div> : null}
                             </div>
 
                             <div className='form-control'>
                                 <input type='text' id='channel' name='channel'
                                 onChange={formik.handleChange} 
-                                value={formik.values.channel}/>
-                                {formik.errors.channel ? <div className='error'>{formik.errors.channel}</div> : null}
+                                value={formik.values.channel}
+                                onBlur={formik.handleBlur} />
+                                {formik.touched.channel && formik.errors.channel ? <div className='error'>{formik.errors.channel}</div> : null}
                             </div>
                         </div>
                     </Grid>
