@@ -2,24 +2,32 @@ import { Grid, Paper } from '@material-ui/core'
 import React from 'react'
 import './YoutubeForm.css'
 import { useFormik } from 'formik'
+import * as Yup from 'yup'
 
 function YoutubeForm() {
+    const validationSchema = Yup.object({
+        name: Yup.string().required('Required'),
+        email: Yup.string().email('Invalid email').required('Required'),
+        channel: Yup.string().required('Required')
+    })
+
     const formik = useFormik({
         initialValues: {
             name: 'SA',
             email: '',
             channel: ''
         },
-        validate: (values) => {
-            let errors = {}
-            if(!values.name) errors.name = 'Required'
+        // validate: (values) => {
+        //     let errors = {}
+        //     if(!values.name) errors.name = 'Required'
             
-            if(!values.email) errors.email = 'Required'
-            if (!/^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/.test(values.email)) errors.email='Invalid email format'
+        //     if(!values.email) errors.email = 'Required'
+        //     if (!/^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/.test(values.email)) errors.email='Invalid email format'
             
-            if(!values.channel) errors.channel = 'Required'
-            return errors
-        },
+        //     if(!values.channel) errors.channel = 'Required'
+        //     return errors
+        // },
+        validationSchema: validationSchema,
         onSubmit: (values) => {
             console.log('form data : ', values)
         }
