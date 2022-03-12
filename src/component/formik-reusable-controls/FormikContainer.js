@@ -6,10 +6,12 @@ import './ReusableControl.css'
 
 function FormikContainer() {
     const initialValues ={
-        email: ''
+        email: '',
+        description: ''
     }
     const validationSchema = Yup.object({
-        email: Yup.string().required('Required')
+        email: Yup.string().required('Required'),
+        description: Yup.string().required('Required')
     })
     const onSubmit = (values) => {
         console.log('Form data : ', values)
@@ -21,10 +23,15 @@ function FormikContainer() {
                 {
                     (formik) => {
                         return(
-                            <Form>
+                            <Form className='form-div-one'>
+                                
                                 <FormikControl control='input' type='email' 
                                 label='Email' name='email'/>
-                                <button type='submit'>Submit</button>
+                                
+                                <FormikControl control='textarea' label='Description' name='description'/>
+                                <div>
+                                    <button type='submit'>Submit</button>
+                                </div> 
                             </Form>
                         )
                     } 

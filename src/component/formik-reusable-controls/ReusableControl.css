@@ -2,3 +2,19 @@
     color: red;
     position: relative;
 }
+
+.form-control-one {
+    display: flex;
+    justify-content: center;
+}
+
+.form-div-one {
+    display: flex;
+    flex-direction: column;
+    height: 40vh;
+    width: 50vw;
+    justify-content: space-evenly;
+    align-content: center !important;
+    background-color: mediumaquamarine;
+    border-radius: 10px;
+}
